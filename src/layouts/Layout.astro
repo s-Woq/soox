@@ -1,15 +1,39 @@
+---
+import Navbar from "../components/Navbar.astro"
+import "../styles/global.css";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>Learn English - Else Get ur money back!</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<meta property="og:url" content="http://learnenglish.com" / >
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Learn English - Else Get ur money back!">
+		<meta property="og:description" content="Learn English with us! We are the best in the world!">
+		<meta property="og:image" content="https://learnenglish.com/og-image.png" />
+		<meta name="description" content="Snox Learn English with us! We are the best in the world!" />
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:site" content="@snooxeng"/>
+		<meta name="twitter:creator" content="@snooxeng"/>
+		<meta name="twitter:title" content="Learn English - Else Get ur money back!">
+		<meta name="twitter:description" content="Learn English with us! We are the best in the world! If you don't speak fluentyle within a month u have a full refund!!" />
+
+		<title>Snoox English-Spanish</title>
 	</head>
+
+	<!-- BODY CONTENT -->
 	<body>
+		
+		<Navbar />
 		<slot />
 	</body>
+
+
 </html>
 
 <style>
@@ -20,3 +44,4 @@
 		height: 100%;
 	}
 </style>
+
