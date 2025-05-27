@@ -1,5 +1,104 @@
-<div class="hero">
-  <div class=" hero-content bg-[url(https://images.pexels.com/photos/734102/pexels-photo-734102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] w-[100vw] h-[100vh] bg-cover bg-center flex items-center justify-center absolute top-0 ">
-
+<div class="hero relative w-[100vw] h-[100vh] flex items-center justify-center">
+  <!-- Bubble mesh background -->
+  <div class="bubble-mesh pointer-events-none absolute w-full h-full inset-0 z-0">
+    <div class="bubble" style="left:10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left:30%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left:50%; animation-delay: 1s;"></div>
+    <div class="bubble" style="left:70%; animation-delay: 3s;"></div>
+    <div class="bubble" style="left:85%; animation-delay: 1.5s;"></div>
   </div>
+  <div class="hero-content w-[100vw] h-[100vh] bg-cover bg-center flex text-center items-center justify-center absolute top-0 z-10 ">
+    <div class="title relative w-full text-5xl font-serif bottom-24">
+      Click Below to start your journey!
+    </div>
+    <a href="#" target="_blank"><div></div></a>
+  </div>
+  <div class="left-image z-1 opacity-60"></div>
 </div>
+<style>
+.title {
+  background: linear-gradient(270deg, #fff, #000, #fff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-content::before {
+  content: '';
+  position: absolute;
+  /* border: 1px solid red; */
+  background-top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  opacity:0.7;
+  background: url("../../images/bghome.webp") no-repeat right bottom;
+}
+
+.left-image::before {
+  content: '';
+  position: absolute;
+  /* border:1px solid red; */
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: url("../../images/lbg.webp") no-repeat left bottom;
+  background-size: cover;
+  z-index: 0;
+  filter:grayscale(0.5) blur(2px);
+}
+
+/* Bubble mesh effect */
+.bubble-mesh {
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.bubble {
+  position: absolute;
+  bottom: -120px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #fff6 60%, #aeefff 100%);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: bubbleUp 8s linear infinite;
+  filter: blur(2px);
+}
+.bubble:nth-child(2) { width: 60px; height: 60px; opacity: 0.5; }
+.bubble:nth-child(3) { width: 100px; height: 100px; opacity: 0.4; }
+.bubble:nth-child(4) { width: 50px; height: 50px; opacity: 0.6; }
+.bubble:nth-child(5) { width: 90px; height: 90px; opacity: 0.5; }
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+</style>
